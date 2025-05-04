@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery - Product Showcase</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./gallery.css">
+   
+</head>
+
+<body>
+
+     <!-- Top Bar -->
+     <div class="top-bar animate-on-scroll">
+      <div class="left">
+        <span><i class="fas fa-envelope"></i>Umyesceramics@gmail.com</span>
+        <span><i class="fas fa-phone"></i> +251911403432</span>
+      </div>
+      <div class="right">
+        <span><i class="fas fa-map-marker-alt"></i>Urael belay building 1 floor mz 11</span>
+      </div>
+    </div>
+
+  <!-- Navbar -->
+  <header class="navbar animate-on-scroll">
+    <div class="logo"><i class="fas fa-sink"></i>  Umyes</div>
+    <nav class="nav-links" id="navLinks">
+      <a class="nav-links-a" href="./index.html">Home</a>
+      <a class="nav-links-a" href="./about.html">About</a>
+      <a class="nav-links-a" href="./products.html">Products</a>
+      <a class="nav-links-a" href="./gallery.html">Gallery</a>
+      <a class="nav-links-a" href="./services.html">Services</a>
+      <a class="nav-links-a" href="./contact.html">Contact</a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+
+
+
+<!-- HEADER SECTION -->
+
+<header class="wedelay-lig  no-2">
+  <h1>Gallery Showcase</h1>
+  <p>Browse through our amazing product designs and innovations</p>
+</header>
+
+<!--MAIN GALLERY SECTION -->
+
+<section class="gallery">
+  <!-- Gallery Cards -->
+  <div class="gallery-item" onclick="openLightbox(1)">
+    <img src="./images/big-wall-sinks-7.jpg" alt="Modern Kitchen Sink">
+    <div class="gallery-text">
+    
+    </div>
+  </div>
+
+  <div class="gallery-item" onclick="openLightbox(2)">
+    <img src="./images/gallery-3.jpg" alt="Luxury Bathroom">
+    <div class="gallery-text">
+      
+    </div>
+  </div>
+
+  <div class="gallery-item" onclick="openLightbox(3)">
+    <img src="./images/SHOWER -main-5.jpeg" alt="Interior Home Sink">
+    <div class="gallery-text">
+      
+    </div>
+  </div>
+
+  <div class="gallery-item" onclick="openLightbox(4)">
+    <img src="./images/tables-2.jpg" alt="Modern Sink">
+    <div class="gallery-text">
+     
+    </div>
+  </div>
+
+  <div class="gallery-item" onclick="openLightbox(5)">
+    <img src="./images/shower 9.jpg" alt="Designer Kitchen Sink">
+    <div class="gallery-text">
+    
+    </div>
+  </div>
+
+  <div class="gallery-item" onclick="openLightbox(6)">
+    <img src="./images/stainless-2.jpg" alt="Premium Bathroom Sink">
+    <div class="gallery-text">
+      
+    </div>
+  </div>
+
+  <div class="gallery-item" onclick="openLightbox(7)">
+    <img src="./images/toilet sinks-3.jpg" alt="Architectural Sink">
+    <div class="gallery-text">
+      
+    </div>
+  </div>
+
+  <div class="gallery-item" onclick="openLightbox(8)">
+    <img src="./images/wall-sinks-3.jpg" alt="Minimalist Kitchen">
+    <div class="gallery-text">
+      
+    </div>
+  </div>
+
+</section>
+
+<!-- Lightbox Modal -->
+
+<div class="lightbox" id="lightbox">
+  <div class="close-btn" onclick="closeLightbox()">&times;</div>
+  <div class="lightbox-images" id="lightboxImages"></div>
+</div>
+
+
+<!-- GALLERY INFO BUTTOM SECTION -->
+
+<section class="gallery-info">
+    <div class="info-container">
+      <h2>Discover the Craftsmanship</h2>
+      <p>Every product in our gallery reflects a deep commitment to quality, innovation, and timeless style. 
+      From sleek modern designs to cozy minimalist aesthetics, we create pieces that inspire living spaces around the world.</p>
+      <a href="./contact.html" class="btn-primary">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- FOOTER SECTION -->
+
+  <footer id="footer">
+    <div class="footer-wrapper">
+      
+      <!-- Logo & About -->
+      <div class="footer-column">
+        <div class="footer-logo"> <strong>Umyes</strong></div>
+        <p>Your trusted provider of quality sinks for homes & businesses.</p>
+        <div class="footer-social-icons">
+          <a href="https://www.tiktok.com/@umyes_ceramics?_t=ZM-8vdxKHAWqMJ&_r=1"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.instagram.com/umyes_ceramics/profilecard/?igsh=MXhkcWgxNDB5cjJx"><i class="fab fa-instagram"></i></a>
+          
+        </div>
+      </div>
+  
+      <!-- Navigation -->
+      <div class="footer-column footer-nav">
+        <h3>Quick Links</h3>
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./products.html">Products</a>
+        <a href="./gallery.html">Gallery</a>
+        <a href="./services.html">Services</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+  
+      <!-- Contact Address -->
+      <div class="footer-column">
+        <h3>Contact Address</h3>
+        <ul>
+          <li>Phone: +251911403432</li>
+          <li>Email:Umyesceramics@gmail.com</li>
+          <li>Head Office:Urael belay building 1 floor mz 11</li>
+        </ul>
+      </div>
+  
+     
+  
+    </div>
+  
+    <button class="back-to-top" onclick="scrollToTop()">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  
+    <div class="footer-bottom">
+      &copy; 2025 | Umyes ceramics and sanitary ware | All Rights Reserved.
+    </div>
+  </footer>
+
+<script src="./gallery.js">
+ 
+</script>
+
+</body>
+</html>

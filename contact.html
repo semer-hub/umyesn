@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f4f7fa;
+      color: #333;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+
+
+
+    
+
+  
+    .nav-links-a{
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* ===== Top Bar ===== */
+  .top-bar {
+    background: linear-gradient(to right, #85beff, #ffffff);
+    color: #000000;
+    font-size: 0.9rem;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    box-sizing: border-box;
+  }
+
+  .top-bar .left,
+  .top-bar .right {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .top-bar i {
+    margin-right: 0.5rem;
+    color: #85beff;
+  }
+
+  .left i{
+      color: #000;
+  }
+
+  /* ===== Navigation Bar ===== */
+  .navbar {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top:32px;
+    width: 100%;
+    z-index: 998;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: background 0.3s ease;
+    box-sizing: border-box;
+    
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-links .nav-links-a{
+    font-weight: 500;
+    color: #333;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links .nav-links-a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links .nav-links-a:hover {
+    color: #85beff;
+  }
+
+  .nav-links .nav-links-a:hover::after {
+     background-color:#85beff ; 
+    transform: scaleX(1);
+  }
+
+  /* ===== Hamburger Menu ===== */
+  
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 25px;
+    height: 20px;
+    justify-content: space-between;
+  }
+
+  .hamburger span {
+    height: 3px;
+    background: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+
+
+
+
+   .contact-header {
+    margin-top: 100px;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      padding: 80px 20px;
+      text-align: center;
+      color: white;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+   .contact-header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    .contact-header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      opacity: 0.9;
+    }
+
+    .contact-container {
+      
+      max-width: 1000px;
+      margin: 40px auto 60px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      padding: 60px 50px;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 35px 40px; /* row gap + column gap */
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+      width: 100%;
+      padding: 20px 15px;
+      border: 2px solid transparent;
+      border-radius: 15px;
+      background: #f9fbfd;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.4s;
+      background-clip: padding-box;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    }
+
+    .form-group input:focus, 
+    .form-group select:focus, 
+    .form-group textarea:focus {
+      border: 2px solid transparent;
+      background-image: linear-gradient(#fff, #fff), 
+                        linear-gradient(135deg, #007bff, #00c6ff);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      box-shadow: 0 0 12px rgba(0,198,255,0.3);
+    }
+
+    .form-group label {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      padding: 0 5px;
+      color: #999;
+      font-size: 0.9rem;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+
+    .form-group input:focus + label,
+    .form-group input:not(:placeholder-shown) + label,
+    .form-group select:focus + label,
+    .form-group select:not([value=""]) + label,
+    .form-group textarea:focus + label,
+    .form-group textarea:not(:placeholder-shown) + label {
+      top: -12px;
+      left: 16px;
+      font-size: 0.75rem;
+      color: #007bff;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    button {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      color: white;
+      padding: 18px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #0062cc, #009ee0);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+
+
+    
+  
+    
+    /*footer  section */
+
+
+    footer {
+        background: #f0f4f8;
+        padding: 60px 30px 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+        animation: fadeUp 1s ease-in-out;
+      }
+  
+      @keyframes fadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+  
+      .footer-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 40px;
+        width: 100%;
+        max-width: 1300px;
+      }
+  
+      .footer-column {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+  
+      .footer-logo {
+        font-size: 1.6rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        color: #0077b6;
+      }
+  
+      .footer-logo i {
+        margin-right: 10px;
+      }
+  
+      .footer-column h3 {
+        color: #023e8a;
+        margin-bottom: 10px;
+      }
+  
+      .footer-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+  
+      .footer-column ul li {
+        font-size: 0.95rem;
+        color: #555;
+        margin-bottom: 6px;
+      }
+  
+      .footer-nav a,
+      .footer-social-icons a {
+        text-decoration: none;
+        color: #0077b6;
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+        display: inline-block;
+        transition: color 0.3s;
+      }
+  
+      .footer-nav a:hover,
+      .footer-social-icons a:hover {
+        
+        color: #555;
+      }
+  
+      .footer-social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+        
+      }
+  
+      .footer-social-icons a {
+        font-size: 1.2rem;
+      }
+  
+      .footer-bottom {
+        border-top:1px solid grey ;
+        margin-top: 40px;
+        font-size: 0.9rem;
+        color: #777;
+        text-align: center;
+        width: 100%;
+      }
+  
+      .back-to-top {
+        position: absolute;
+        bottom: 20px;
+        right: 30px;
+        background-color: #0077b6;
+        color: white;
+        border: none;
+        padding: 10px 12px;
+        border-radius: 50%;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        z-index: 20;
+      }
+  
+      .back-to-top:hover {
+        background-color: #005f8e;
+      }
+
+
+
+    
+  @media(max-width: 768px){
+
+
+    
+.top-bar i{
+    color:#000000;
+}
+
+.nav-links {
+position: absolute;
+top: 100%;
+left: 0;
+right: 0;
+background: #fff;
+flex-direction: column;
+align-items: center;
+gap: 1.5rem;
+padding: 1rem 0;
+display: none;
+animation: slideDown 0.4s ease forwards;
+}
+
+.nav-links.active {
+display: flex;
+}
+
+.hamburger {
+display: flex;
+}
+
+
+.gallery {
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-auto-rows: 260px;
+}
+
+.lightbox-images {
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-images img {
+  height: auto;
+  width: 90%;
+  max-height: 60vh;
+}
+
+
+.info-container h2 {
+    font-size: 2rem;
+  }
+  .info-container p {
+    font-size: 1rem;
+  }
+
+
+  
+.footer-logo {
+justify-content: flex-start;
+}
+
+.footer-column h3 {
+font-size: 1.1rem;
+}
+
+.back-to-top {
+right: 15px;
+bottom: 15px;
+}
+
+}
+
+
+
+
+
+    @media(max-width: 600px) {
+        .contact-header h1 { font-size: 2.4rem; }
+      .contact-container { padding: 40px 25px; }
+      form { gap: 30px; grid-template-columns: 1fr; }
+    }
+
+
+
+    
+
+
+@media (max-width: 360px){
+
+/* ===== Top Bar ===== */
+.top-bar {
+  
+  display: none;
+ 
+}
+  
+  .top-bar i{
+    color:#000000;
+}
+
+
+.navbar {
+ 
+  top:0px;
+  
+}
+
+.nav-links {
+position: absolute;
+top: 100%;
+left: 0;
+right: 0;
+background: #fff;
+flex-direction: column;
+align-items: center;
+gap: 1.5rem;
+padding: 1rem 0;
+display: none;
+animation: slideDown 0.4s ease forwards;
+}
+
+.nav-links.active {
+display: flex;
+}
+
+.hamburger {
+display: flex;
+}
+
+
+
+.wedelay-lig {
+margin-top: 70px;
+
+}
+}
+  </style>
+</head>
+<body>
+
+
+    <!-- Top Bar -->
+    <div class="top-bar animate-on-scroll">
+      <div class="left">
+        <span><i class="fas fa-envelope"></i>Umyesceramics@gmail.com</span>
+        <span><i class="fas fa-phone"></i> +251911403432</span>
+      </div>
+      <div class="right">
+        <span><i class="fas fa-map-marker-alt"></i>Urael belay building 1 floor mz 11</span>
+      </div>
+    </div>
+
+  <!-- Navbar -->
+  <header class="navbar animate-on-scroll">
+    <div class="logo"><i class="fas fa-sink"></i>  Umyes</div>
+    <nav class="nav-links" id="navLinks">
+      <a class="nav-links-a" href="./index.html">Home</a>
+      <a class="nav-links-a" href="./about.html">About</a>
+      <a class="nav-links-a" href="./products.html">Products</a>
+      <a class="nav-links-a" href="./gallery.html">Gallery</a>
+      <a class="nav-links-a" href="./services.html">Services</a>
+      <a class="nav-links-a" href="./contact.html">Contact</a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+
+<header class="contact-header">
+  <h1>Contact Us</h1>
+  <p>Let us know exactly what you're looking for</p>
+</header>
+
+<div class="contact-container">
+  <form action="https://formspree.io/f/mrbpvbko" method="POST">
+    <!-- Replace 'your_form_id' with your actual Formspree form ID -->
+
+    <div class="form-group">
+      <input type="text" name="name" id="name" placeholder=" " required>
+      <label for="name"><i class="fas fa-user"></i> Full Name</label>
+    </div>
+
+    <div class="form-group">
+      <input type="email" name="email" id="email" placeholder=" " required>
+      <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+    </div>
+
+    <div class="form-group">
+      <input type="tel" name="phone" id="phone" placeholder=" " required>
+      <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+    </div>
+
+    <div class="form-group">
+      <select name="product_type" id="product_type" required>
+        <option value="" disabled selected>Select product type</option>
+        <option value="Kitchen Stainless Steel Sink">Kitchen Stainless Steel Sink</option>
+        <option value="Shower Poles">Shower Poles</option>
+        <option value="Toilte Seat">Toilte Seat</option>
+        <option value="Hand Wash Sinks">Hand Wash Sinks</option>
+        <option value="Cabinates">Cabinates</option>
+        <option value="Ceramics">Ceramics</option>
+      </select>
+      <label for="product_type"><i class="fas fa-box"></i> Product Type</label>
+    </div>
+
+    <div class="form-group">
+      <input type="number" name="quantity" id="quantity" placeholder=" " min="1" required>
+      <label for="quantity"><i class="fas fa-sort-numeric-up"></i> Quantity Needed</label>
+    </div>
+
+    <div class="form-group">
+      <select name="installation" id="installation" required>
+        <option value="" disabled selected>Do you need Delivery?</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+      <label for="installation"><i class="fas fa-truck"></i>Delivery Required?</label>
+    </div>
+
+    <div class="form-group">
+      <input type="date" name="delivery_date" id="delivery_date" placeholder=" ">
+      <label for="delivery_date"><i class="fas fa-calendar-alt"></i> Preferred Delivery Date</label>
+    </div>
+
+    <div class="form-group" style="grid-column: 1 / -1;">
+      <textarea name="description" id="description" placeholder=" " rows="4" required></textarea>
+      <label for="description"><i class="fas fa-align-left"></i> Tell us more about your project</label>
+    </div>
+
+    <button type="submit"><i class="fas fa-paper-plane"></i> Send Inquiry</button>
+  </form>
+</div>
+
+
+<!-- FOOTER SECTION -->
+<footer id="footer">
+  <div class="footer-wrapper">
+    
+    <!-- Logo & About -->
+    <div class="footer-column">
+      <div class="footer-logo"> <strong>Umyes</strong></div>
+      <p>Your trusted provider of quality sinks for homes & businesses.</p>
+      <div class="footer-social-icons">
+        <a href="https://www.tiktok.com/@umyes_ceramics?_t=ZM-8vdxKHAWqMJ&_r=1"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/umyes_ceramics/profilecard/?igsh=MXhkcWgxNDB5cjJx"><i class="fab fa-instagram"></i></a>
+        
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="footer-column footer-nav">
+      <h3>Quick Links</h3>
+      <a href="./index.html">Home</a>
+      <a href="./about.html">About</a>
+      <a href="./products.html">Products</a>
+      <a href="./gallery.html">Gallery</a>
+      <a href="./services.html">Services</a>
+      <a href="./contact.html">Contact</a>
+    </div>
+
+    <!-- Contact Address -->
+    <div class="footer-column">
+      <h3>Contact Address</h3>
+      <ul>
+        <li>Phone: +251911403432</li>
+        <li>Email:Umyesceramics@gmail.com</li>
+        <li>Head Office:Urael belay building 1 floor mz 11</li>
+      </ul>
+    </div>
+
+   
+
+  </div>
+
+  <button class="back-to-top" onclick="scrollToTop()">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <div class="footer-bottom">
+    &copy; 2025 | Umyes ceramics and sanitary ware | All Rights Reserved.
+  </div>
+</footer>
+
+
+  <script>
+     // Hamburger toggle
+ const hamburger = document.getElementById('hamburger');
+ const navLinks = document.getElementById('navLinks');
+
+ hamburger.addEventListener('click', () => {
+   hamburger.classList.toggle('active');
+   navLinks.classList.toggle('active');
+ });
+
+ // Scroll animations
+ const scrollElements = document.querySelectorAll('.animate-on-scroll');
+
+ const elementInView = (el, offset = 100) => {
+   const elementTop = el.getBoundingClientRect().top;
+   return elementTop <= (window.innerHeight - offset);
+ };
+
+ const displayScrollElement = (element) => {
+   element.classList.add('show');
+ };
+
+ const handleScrollAnimation = () => {
+   scrollElements.forEach((el) => {
+     if (elementInView(el)) {
+       displayScrollElement(el);
+     }
+   });
+ };
+
+ window.addEventListener('scroll', () => {
+   handleScrollAnimation();
+ });
+
+ // Initial load
+ handleScrollAnimation();
+
+
+
+
+
+
+ 
+
+  //FOOTER SECTION
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+  
+  </script>
+
+</body>
+</html>
+
+
+

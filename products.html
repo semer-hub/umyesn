@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Products Page Header</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./products.css">
+</head>
+<body>
+
+
+     <!-- Top Bar -->
+     <div class="top-bar animate-on-scroll">
+      <div class="left">
+        <span><i class="fas fa-envelope"></i>Umyesceramics@gmail.com</span>
+        <span><i class="fas fa-phone"></i> +251911403432</span>
+      </div>
+      <div class="right">
+        <span><i class="fas fa-map-marker-alt"></i>Urael belay building 1 floor mz 11</span>
+      </div>
+    </div>
+
+  <!-- Navbar -->
+  <header class="navbar animate-on-scroll">
+    <div class="logo"><i class="fas fa-sink"></i>  Umyes</div>
+    <nav class="nav-links" id="navLinks">
+      <a class="nav-links-a" href="./index.html">Home</a>
+      <a class="nav-links-a" href="./about.html">About</a>
+      <a class="nav-links-a" href="./products.html">Products</a>
+      <a class="nav-links-a" href="./gallery.html">Gallery</a>
+      <a class="nav-links-a" href="./services.html">Services</a>
+      <a class="nav-links-a" href="./contact.html">Contact</a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!--MAIN PRODUCTS SECTION START-->
+
+  <section class="products-header" id="products-highlight">
+    <div class="left-content">
+      <h1>Explore Our Premium Sinks</h1>
+      <p>Discover durable, beautifully crafted sink solutions for any kitchen or bathroom. Modern styles meet everyday function.</p>
+      <div class="scroll-icon">
+        <i class="fas fa-arrow-down"></i>
+      </div>
+    </div>
+   
+  </section>
+
+  <!--PRODUCTS HIGHLIGHT SECTION -->
+
+  <section class="product-highlights">
+    <div class="highlight-wrapper">
+      <div class="highlight-intro">
+        <h2>What Sets Our Sinks Apart</h2>
+        <p>Before you explore our products, here's what makes our sinks the first choice for homes and businesses worldwide.</p>
+      </div>
+
+      <div class="highlight-list">
+        <div class="highlight-item">
+          <i class="fas fa-check-circle"></i>
+          <span>Engineered for long-lasting durability using premium stainless steel and ceramic.</span>
+        </div>
+        <div class="highlight-item">
+          <i class="fas fa-check-circle"></i>
+          <span>Eco-conscious production methods with minimal carbon footprint.</span>
+        </div>
+        <div class="highlight-item">
+          <i class="fas fa-check-circle"></i>
+          <span>Wide variety of stylish designs, colors, and finishes.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!--PRODUCTS HEADER  -->
+
+  <header class="section-header">
+    <h1>Our Exclusive Sink Collection</h1>
+    <p>Discover our range of beautifully crafted kitchen sinks designed to bring elegance and functionality to your home.</p>
+  </header>
+  
+  <!--PRODUCT CARDS SECTION -->
+
+  <section class="product-section">
+    <div class="products-grid">
+      <!-- Product Cards -->
+      <div class="product-card" onclick="openModal(0)">
+        <img src="./images/stainless-1.jpg" />
+        <div class="product-card-content">
+          <h3>Kitchen Stainless Steel Sink</h3>
+          <p>Model:Medium</p>
+        </div>
+      </div>
+      <div class="product-card" onclick="openModal(1)">
+        <img src="./images/SHOWER -main-1.jpg" />
+        <div class="product-card-content">
+          <h3>Shower Poles</h3>
+          <p>Model:1145-CRV</p>
+        </div>
+      </div>
+      <div class="product-card" onclick="openModal(2)">
+        <img src="./images/toilet sinks-22.jpg" />
+        <div class="product-card-content">
+          <h3>Toilte Seat</h3>
+          <p>Model: CL-303</p>
+        </div>
+      </div>
+      <div class="product-card" onclick="openModal(3)">
+        <img src="./images/gallery-2.jpg" />
+        <div class="product-card-content">
+          <h3>Hand Wash Sinks</h3>
+          <p>Model: SM-404</p>
+        </div>
+      </div>
+      <div class="product-card" onclick="openModal(4)">
+        <img src="images/tables-3.jpg" />
+        <div class="product-card-content">
+          <h3>Cabinates</h3>
+          <p>Model: EC-505</p>
+        </div>
+      </div>
+      <div class="product-card" onclick="openModal(5)">
+        <img src="./images/wall-sinks-3.jpg" />
+        <div class="product-card-content">
+          <h3>Ceramicsk</h3>
+          <p>Model:All models are available</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!--MODAL CONTAINER -->
+  <div id="productModalsContainer"></div>
+
+
+
+  <section class="info-section" id="infoSection">
+    <div class="section-column benefits">
+      <h2 class="info-title">Benefits</h2>
+      <ul class="info-list">
+        <li><i class="fas fa-square"></i>Fast & Free Delivery</li>
+        <li><i class="fas fa-square"></i>5-Year Warranty Included</li>
+        <li><i class="fas fa-square"></i>Best Price Guarantee</li>
+      </ul>
+    </div>
+    <div class="divider-line" id="dividerLine"></div>
+    <div class="section-column guide">
+      <h2 class="info-title">Installation Guide</h2>
+      <ul class="info-list">
+        <li><i class="fas fa-square"></i>Unbox Your Sink Carefully</li>
+        <li><i class="fas fa-square"></i>Align the Sink with the Cutout</li>
+        <li><i class="fas fa-square"></i>Secure and Seal Properly</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section class="promise-section" id="promiseSection">
+    <div class="promise-left">
+      <img src="./images/wooden-3.jpg" alt="Product Quality">
+    </div>
+  
+  
+    <div class="promise-right">
+      <h2>Our Promise to You</h2>
+      <div class="promise-feature"><i class="fas fa-shield-alt"></i> 100% Premium Quality Materials</div>
+      <div class="promise-feature"><i class="fas fa-truck-fast"></i> Super Fast & Safe Delivery</div>
+      <div class="promise-feature"><i class="fas fa-headset"></i> 24/7 Professional Support</div>
+      <div class="promise-feature"><i class="fas fa-rotate-right"></i> Easy Returns & Warranty</div>
+    </div>
+  </section>
+
+
+   <!-- FOOTER SECTION -->
+   <footer id="footer">
+    <div class="footer-wrapper">
+      
+      <!-- Logo & About -->
+      <div class="footer-column">
+        <div class="footer-logo"> <strong>Umyes</strong></div>
+        <p>Your trusted provider of quality sinks for homes & businesses.</p>
+        <div class="footer-social-icons">
+          <a href="https://www.tiktok.com/@umyes_ceramics?_t=ZM-8vdxKHAWqMJ&_r=1"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.instagram.com/umyes_ceramics/profilecard/?igsh=MXhkcWgxNDB5cjJx"><i class="fab fa-instagram"></i></a>
+          
+        </div>
+      </div>
+  
+      <!-- Navigation -->
+      <div class="footer-column footer-nav">
+        <h3>Quick Links</h3>
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./products.html">Products</a>
+        <a href="./gallery.html">Gallery</a>
+        <a href="./services.html">Services</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+  
+      <!-- Contact Address -->
+      <div class="footer-column">
+        <h3>Contact Address</h3>
+        <ul>
+          <li>Phone: +251911403432</li>
+          <li>Email:Umyesceramics@gmail.com</li>
+          <li>Head Office:Urael belay building 1 floor mz 11</li>
+        </ul>
+      </div>
+  
+     
+  
+    </div>
+  
+    <button class="back-to-top" onclick="scrollToTop()">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  
+    <div class="footer-bottom">
+      &copy; 2025 | Umyes ceramics and sanitary ware | All Rights Reserved.
+    </div>
+  </footer>
+
+  <script src="./products.js">
+</script>
+
+</body>
+</html>
